@@ -4,20 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>The Musafir Tales</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
+
+  <!-- Sidebar Overlay -->
+  <div class="sidebar-overlay"></div>
 
   <!-- HEADER -->
   <header>
     <div class="top-bar">
       <div class="logo">The Musafir Tales</div>
       <div class="top-icons">
-        <input type="text" placeholder="Search...">
-        <span class="icon">📍</span>
-        <span class="icon">🔔</span>
-        <span class="icon">👤</span>
-        <span class="hamburger">&#9776;</span>
+        <div class="search-box">
+          <input type="text" placeholder="Search destinations...">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </div>
+        <button class="icon-btn" aria-label="Location">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+        </button>
+        <button class="icon-btn" aria-label="Notifications">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+            <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+          </svg>
+        </button>
+        <button class="icon-btn" aria-label="Account">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </button>
+        <button class="icon-btn hamburger" aria-label="Menu">
+          <svg class="icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </div>
     <nav class="navbar">
@@ -33,19 +66,31 @@
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <h3>Categories</h3>
-    <ul>
-      <li>Hotels</li>
-      <li>Food & Drinks</li>
-      <li>Entertainment</li>
-      <li>Health & Safety</li>
+    <div class="sidebar-header">
+      <h3>Categories</h3>
+      <button class="close-sidebar" aria-label="Close menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <ul class="sidebar-menu">
+      <li><a href="#"><span class="dot"></span> Hotels</a></li>
+      <li><a href="#"><span class="dot"></span> Food & Drinks</a></li>
+      <li><a href="#"><span class="dot"></span> Entertainment</a></li>
+      <li><a href="#"><span class="dot"></span> Health & Safety</a></li>
     </ul>
+    <div class="sidebar-footer">
+      <p>“Every path has a soul.”</p>
+    </div>
   </aside>
+
   <!-- HERO SECTION 1 -->
   <section class="hero hero1">
     <div class="hero-content">
       <button class="hero-btn" data-target="#categories">Book a Trip With Us →</button>
-      <p>Embark on a tour worth keeping in memories.we provide our top notch tour guides,and make sure you not only explore the country but become a part of it. </p>
+      <p>Embark on a tour worth keeping in memories. We provide our top notch tour guides, and make sure you not only explore the country but become a part of it.</p>
     </div>
     <div class="hero-img-wrapper">
       <img src="images/mountains/hassan-faisal-lzn7dnqYsZ0-unsplash.jpg" alt="Mountain view in Pakistan">
@@ -56,7 +101,7 @@
   <section class="hero hero2">
     <div class="hero-content">
       <button class="hero-btn" data-target="#top-destinations">Plan Your Own Trip →</button>
-      <p>Want a ME TIME!,no worries we've got you.Now you can plan your own tour with the help of website.You can explore on your own.Embark on a tour that will stay on your minforever.</p>
+      <p>Want a ME TIME? No worries, we've got you. Now you can plan your own tour with the help of our website. You can explore on your own. Embark on a tour that will stay on your mind forever.</p>
     </div>
     <div class="hero-img-wrapper">
       <img src="images/mountains/WhatsApp Image 2026-04-03 at 8.27.18 AM (1).jpeg" alt="Lakeside view in Pakistan">
@@ -67,50 +112,58 @@
   <section class="categories" id="categories">
     <h2>Categories</h2>
     <div class="slider-container">
-      <button class="prev">&#10094;</button>
+      <button class="prev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
       <div class="slider">
-        <div class="card"><img src="images/top destinations/Islamabad Pakistan.jpg" alt="Category 1"><div class="card-title">City</div>
-        </div>
-        <div class="card"><img src="images/mountains/download (4).jpg" alt="Category 2"><div class="card-title">Mountains</div>
-        </div>
-        <div class="card"><img src="images/city/karachi clifton.jpg" alt="Category 3"><div class="card-title">Beaches</div>
-        </div>
-        <div class="card"><img src="images/desert/balochistan, pakistan 🇵🇰.jpg" alt="Category 4"><div class="card-title">Desert</div>
-        </div>
-        <div class="card"><img src="images/mountains/Village is about peace ✌️🕊️.jpg" alt="Category 5"><div class="card-title">Villages</div>
-        </div>
-        <div class="card"><img src="images/forts/Fort rohtas.jpg" alt="Category 6"><div class="card-title">Historical</div>
-        </div>
-        <div class="card"><img src="images/city/Lahore, Pakistan.jpg" alt="Category 7"><div class="card-title">Culture</div>
-        </div>
-        <div class="card"><img src="images/mountains/Lake Saif-ul-Muluk - Naran - pakistan.jpg" alt="Category 8"><div class="card-title">Lakes</div>
-        </div>
-        <div class="card"><img src="images/mountains/hunza valley.jpg" alt="Category 9"><div class="card-title">Valley</div>
-        </div>
+        <div class="card"><img src="images/top destinations/Islamabad Pakistan.jpg" alt="City"><div class="card-title">City</div></div>
+        <div class="card"><img src="images/mountains/download (4).jpg" alt="Mountains"><div class="card-title">Mountains</div></div>
+        <div class="card"><img src="images/city/karachi clifton.jpg" alt="Beaches"><div class="card-title">Beaches</div></div>
+        <div class="card"><img src="images/desert/balochistan, pakistan 🇵🇰.jpg" alt="Desert"><div class="card-title">Desert</div></div>
+        <div class="card"><img src="images/mountains/Village is about peace ✌️🕊️.jpg" alt="Villages"><div class="card-title">Villages</div></div>
+        <div class="card"><img src="images/forts/Fort rohtas.jpg" alt="Historical"><div class="card-title">Historical</div></div>
+        <div class="card"><img src="images/city/Lahore, Pakistan.jpg" alt="Culture"><div class="card-title">Culture</div></div>
+        <div class="card"><img src="images/mountains/Lake Saif-ul-Muluk - Naran - pakistan.jpg" alt="Lakes"><div class="card-title">Lakes</div></div>
+        <div class="card"><img src="images/mountains/hunza valley.jpg" alt="Valley"><div class="card-title">Valley</div></div>
       </div>
-      <button class="next">&#10095;</button>
+      <button class="next" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
     </div>
-</section 
-  <!--  TOP DESTINATIONS -->
+  </section>
+
+  <!-- TOP DESTINATIONS -->
   <section class="top-destinations" id="top-destinations">
     <h2>Top Destinations</h2>
     <div class="slider-container">
-      <button class="prev">&#10094;</button>
+      <button class="prev" aria-label="Previous">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
       <div class="slider">
-        <div class="card"><img src="images/mountains/hunza valley.jpg" alt="Destination 1"><h3>Hunza Valley</h3><p>Explore the valley full of scenic views and peaceful-ness.</p></div>
-        <div class="card"><img src="images/mountains/hillstation.jpg" alt="Destination 2"><h3>Murree Chair lifts</h3><p>A peaceful ride with full of views.You just capture it in your lens.</p></div>
-        <div class="card"><img src="images/city/lahore androon.jpg" alt="Destination 3"><h3>Androon Lahore</h3><p>Visit ANDROON with its colorful aesthetics and history ,you're sure to love it!</p></div>
-        <div class="card"><img src="images/city/Lahore, Pakistan.jpg" alt="Destination 4"><h3>Badshahi Mosque</h3><p>Dive into Pakistan's culture some more,reminding of Mughal Era.</p></div>
-        <div class="card"><img src="images/top destinations/Islamabad Pakistan.jpg" alt="Destination 5"><h3>Islamabad</h3><p>Explore the city with its Marglla Hills.It has to offer it's lush greenery along with it's fabulous Malls.</p></div>
-        <div class="card"><img src="images/city/faisal mosque.jpg" alt="Destination 6"><h3>Faisal Mosque</h3><p>Culture meets elegance.One of the biggest Mosque in Pakistan.</p></div>
-        <div class="card"><img src="images/mountains/Lake Saif-ul-Muluk - Naran - pakistan.jpg" alt="Destination 7"><h3>Saif ul Malook Lake</h3><p>A peaceful lake situated in Naran Valley with a view of snowy peaks,Whats more to say about it!</p></div>
-        <div class="card"><img src="images/top destinations/Neelum Valley - Pakistan.jpg" alt="Destination 8"><h3>Neelum Valley </h3><p>Visit Neelum Valley in Azad Kashmir.The land of curosity with it's breathtaking views.</p></div>
-        <div class="card"><img src="images/city/karachi clifton.jpg" alt="Destination 9"><h3>Sea View</h3><p>The city of lights.This city has to offer everything from it's busy Bazars to it's beaches.</p></div>
-        <div class="card"><img src="images/mountains/Aubia to dongla track_.jpg" alt="Destination 10"><h3>Pipeline Track</h3><p>Fan of treking,take this path from Nathia Gali to Aubia.This 4km track has to offer lush forests covered with clouds.</p></div>
-        <div class="card"><img src="images/forts/Fort rohtas.jpg" alt="Destination 11"><h3>Rohtas Fort</h3><p>This fort takes you back in mughal era.If you're a lover of history.This is just the place.</p></div>
-        <div class="card"><img src="images/mountains/Fairy Meadows Pakistan.jpg" alt="Destination 12"><h3>Fairy Meadows</h3><p>A HIDDEN jem of Pakistan.The beauty of this place would made you speechless.</p></div>
+        <div class="card"><img src="images/mountains/hunza valley.jpg" alt="Hunza Valley"><h3>Hunza Valley</h3><p>Explore the valley full of scenic views and peacefulness.</p></div>
+        <div class="card"><img src="images/mountains/hillstation.jpg" alt="Murree"><h3>Murree Chair Lifts</h3><p>A peaceful ride full of views. You just capture it in your lens.</p></div>
+        <div class="card"><img src="images/city/lahore androon.jpg" alt="Androon Lahore"><h3>Androon Lahore</h3><p>Visit ANDROON with its colorful aesthetics and history. You're sure to love it!</p></div>
+        <div class="card"><img src="images/city/Lahore, Pakistan.jpg" alt="Badshahi Mosque"><h3>Badshahi Mosque</h3><p>Dive into Pakistan's culture some more, reminding of Mughal Era.</p></div>
+        <div class="card"><img src="images/top destinations/Islamabad Pakistan.jpg" alt="Islamabad"><h3>Islamabad</h3><p>Explore the city with its Margalla Hills. It has to offer lush greenery along with fabulous malls.</p></div>
+        <div class="card"><img src="images/city/faisal mosque.jpg" alt="Faisal Mosque"><h3>Faisal Mosque</h3><p>Culture meets elegance. One of the biggest mosques in Pakistan.</p></div>
+        <div class="card"><img src="images/mountains/Lake Saif-ul-Muluk - Naran - pakistan.jpg" alt="Saif ul Malook"><h3>Saif ul Malook Lake</h3><p>A peaceful lake situated in Naran Valley with a view of snowy peaks. What more to say about it!</p></div>
+        <div class="card"><img src="images/top destinations/Neelum Valley - Pakistan.jpg" alt="Neelum Valley"><h3>Neelum Valley</h3><p>Visit Neelum Valley in Azad Kashmir. The land of curiosity with its breathtaking views.</p></div>
+        <div class="card"><img src="images/city/karachi clifton.jpg" alt="Sea View"><h3>Sea View</h3><p>The city of lights. This city has to offer everything from busy bazaars to beaches.</p></div>
+        <div class="card"><img src="images/mountains/Aubia to dongla track_.jpg" alt="Pipeline Track"><h3>Pipeline Track</h3><p>Fan of trekking? Take this path from Nathia Gali to Aubia. This 4km track offers lush forests covered with clouds.</p></div>
+        <div class="card"><img src="images/forts/Fort rohtas.jpg" alt="Rohtas Fort"><h3>Rohtas Fort</h3><p>This fort takes you back to the Mughal era. If you're a lover of history, this is just the place.</p></div>
+        <div class="card"><img src="images/mountains/Fairy Meadows Pakistan.jpg" alt="Fairy Meadows"><h3>Fairy Meadows</h3><p>A hidden gem of Pakistan. The beauty of this place would leave you speechless.</p></div>
       </div>
-      <button class="next">&#10095;</button>
+      <button class="next" aria-label="Next">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
     </div>
   </section>
 
@@ -118,26 +171,67 @@
   <section class="info-section">
     <div class="info">
       <h2>Why Choose Us?</h2>
-      <p.>The Musafir Tales provide experience worth your while.You travel for a week or so,but you remember it for years.We make sure you not only travel the country but become a paRt of it.</p.>
-      <p>We take your worries and turn them into a memorable JOURNEY for you.We make sure to show you all the hidden jems of Pakistan with its define and artistic cultures.So you could get to know "THE PAKISTAN".</p>
+      <p>The Musafir Tales provide experiences worth your while. You travel for a week or so, but you remember it for years. We make sure you not only travel the country but become a part of it.</p>
+      <p>We take your worries and turn them into a memorable journey for you. We make sure to show you all the hidden gems of Pakistan with its divine and artistic cultures, so you could get to know "THE PAKISTAN".</p>
     </div>
     <div class="info">
       <h2>About The Musafir Tales</h2>
-       <p>The Musafir Tales with it's user friendly webpage helps you explore Pakistan.Along with our budget friendly packges.We provide you online free services to plan your own trip.Our main goal is to make your journey hasslefree,so you can capture it forever in your heart.</p>
+      <p>The Musafir Tales with its user friendly webpage helps you explore Pakistan. Along with our budget friendly packages, we provide you online free services to plan your own trip. Our main goal is to make your journey hassle-free, so you can capture it forever in your heart.</p>
     </div>
   </section>
 
   <!-- FOOTER -->
-  <footer>
-    <p class="quote">“Every path has a soul, every traveler has a tale.”</p>
-    <div class="footer-contact">
-      <p>📱 +92 300 1234567</p>
-      <p>✉️ email@example.com</p>
-      <p>📷 Instagram</p>
-      <p>📘 Facebook</p>
+<footer>
+  <p class="quote">"Every path has a soul, every traveler has a tale."</p>
+  
+  <div class="footer-social">
+    <p class="follow-label">Follow Us On</p>
+    <div class="social-icons">
+      <a href="#" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+      </a>
+      <a href="#" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+        </svg>
+      </a>
+      <a href="#" aria-label="Twitter">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+        </svg>
+      </a>
+      <a href="#" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+          <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+        </svg>
+      </a>
     </div>
-  </footer>
+  </div>
 
-  <script src="script.js"></script>
+  <div class="footer-contact">
+    <div class="contact-item">
+      <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+      </svg>
+      <span>+92 300 1234567</span>
+    </div>
+    <div class="contact-item">
+      <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+        <polyline points="22,6 12,13 2,6"></polyline>
+      </svg>
+      <span>email@example.com</span>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p> 2026 The Musafir Tales. All rights reserved.</p>
+  </div>
+</footer>
 </body>
 </html>
