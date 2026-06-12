@@ -30,7 +30,6 @@ if (sidebarOverlay) {
     sidebarOverlay.addEventListener('click', closeSidebarFn);
 }
 
-// Close on Escape key
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && sidebar.classList.contains('active')) {
         closeSidebarFn();
@@ -60,7 +59,12 @@ sliderContainers.forEach(container => {
 
     if (!slider || !prev || !next) return;
 
-    const slideWidth = () => slider.children[0].offsetWidth + 20; // card + gap
+    const slideWidth = () => {
+        const firstCard = slider.children[0];
+        if (!firstCard) return 0;
+        const gap = parseInt(getComputedStyle(slider).gap) || 22;
+        return firstCard.offsetWidth + gap;
+    };
 
     next.addEventListener('click', () => {
         slider.scrollBy({ left: slideWidth(), behavior: 'smooth' });
