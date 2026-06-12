@@ -48,7 +48,7 @@ heroButtons.forEach(btn => {
 });
 
 // =======================
-// Sliders (Categories + Top Destinations)
+// Sliders
 // =======================
 const sliderContainers = document.querySelectorAll('.slider-container');
 
@@ -59,19 +59,19 @@ sliderContainers.forEach(container => {
 
     if (!slider || !prev || !next) return;
 
-    const slideWidth = () => {
-        const firstCard = slider.children[0];
-        if (!firstCard) return 0;
+    const getScrollAmount = () => {
+        const card = slider.querySelector('.card');
+        if (!card) return 300;
         const gap = parseInt(getComputedStyle(slider).gap) || 22;
-        return firstCard.offsetWidth + gap;
+        return card.offsetWidth + gap;
     };
 
     next.addEventListener('click', () => {
-        slider.scrollBy({ left: slideWidth(), behavior: 'smooth' });
+        slider.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
     });
 
     prev.addEventListener('click', () => {
-        slider.scrollBy({ left: -slideWidth(), behavior: 'smooth' });
+        slider.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
     });
 
     // Drag to scroll
