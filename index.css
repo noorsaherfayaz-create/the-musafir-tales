@@ -5,31 +5,27 @@
   --font-display: 'Playfair Display', 'Georgia', serif;
   --font-body: 'Inter', 'Segoe UI', 'Roboto', sans-serif;
 
-  /* LIGHT & AIRY — Skardu Morning */
-  --sky-pale: #E8EEF4;          /* Pale morning sky */
-  --sky-soft: #D4DEE8;          /* Soft cloud */
-  --mist-blue: #B8C8D8;         /* Mountain mist */
-  --frost-light: #9EB4C8;       /* Light frost */
-  --lake-soft: #7A9DB5;         /* Soft lake blue */
-  --slate-warm: #5A7A8F;        /* Warm slate */
+  --sky-pale: #E8EEF4;
+  --sky-soft: #D4DEE8;
+  --mist-blue: #B8C8D8;
+  --frost-light: #9EB4C8;
+  --lake-soft: #7A9DB5;
+  --slate-warm: #5A7A8F;
 
-  /* RUST — Autumn foliage (lighter) */
-  --rust-pale: #F4E4D8;         /* Pale rust cream */
-  --rust-soft: #E8C4A8;         /* Soft peach */
-  --rust-light: #D49A6E;        /* Light copper */
-  --rust-mid: #C07850;          /* Mid terracotta */
-  --rust-warm: #A85C3A;         /* Warm rust */
+  --rust-pale: #F4E4D8;
+  --rust-soft: #E8C4A8;
+  --rust-light: #D49A6E;
+  --rust-mid: #C07850;
+  --rust-warm: #A85C3A;
 
-  /* DARK ACCENTS — Minimal, for contrast */
-  --ink-soft: #2A3A4A;          /* Soft ink (not harsh black) */
-  --ink-mid: #1E2E3E;           /* Mid ink */
-  --ink-deep: #152030;          /* Deep ink — use sparingly */
-  --night-min: #0E1824;         /* Minimal night */
+  --ink-soft: #2A3A4A;
+  --ink-mid: #1E2E3E;
+  --ink-deep: #152030;
+  --night-min: #0E1824;
 
-  /* SNOW & CREAM */
-  --snow: #FAFBFC;              /* Crisp snow */
-  --cream: #F5F0E8;             /* Warm cream */
-  --cream-warm: #EDE6D8;        /* Warmer cream */
+  --snow: #FAFBFC;
+  --cream: #F5F0E8;
+  --cream-warm: #EDE6D8;
 
   --radius: 14px;
   --shadow: 0 8px 30px rgba(21, 32, 48, 0.12);
@@ -37,9 +33,6 @@
   --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* =========================================
-   BASE
-   ========================================= */
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 
@@ -81,7 +74,7 @@ h2::after {
 }
 
 /* =========================================
-   HEADER & NAVBAR
+   HEADER
    ========================================= */
 header {
   position: sticky;
@@ -173,7 +166,9 @@ header {
 .icon-btn .icon-svg { width: 20px; height: 20px; }
 .hamburger { display: none; }
 
-/* Navbar */
+/* =========================================
+   NAVBAR
+   ========================================= */
 .navbar {
   background: var(--cream);
   padding: 0 40px;
@@ -335,7 +330,7 @@ header {
 }
 
 /* =========================================
-   HERO SECTIONS — MORE IMAGE, LIGHTER
+   HERO SECTIONS
    ========================================= */
 .hero {
   display: flex;
@@ -344,14 +339,9 @@ header {
   overflow: hidden;
 }
 
-/* Hero 1: Image dominant, text overlay */
-.hero1 {
-  flex-direction: row-reverse;
-}
+.hero1 { flex-direction: row-reverse; }
 
-.hero1 .hero-img-wrapper {
-  flex: 1.6;
-}
+.hero1 .hero-img-wrapper { flex: 1.6; }
 
 .hero1 .hero-content {
   flex: 0.7;
@@ -373,10 +363,7 @@ header {
   align-items: flex-start;
 }
 
-/* Hero 2: Image dominant, text overlay on right */
-.hero2 .hero-img-wrapper {
-  flex: 1.6;
-}
+.hero2 .hero-img-wrapper { flex: 1.6; }
 
 .hero2 .hero-content {
   flex: 0.7;
@@ -441,11 +428,8 @@ header {
   transition: transform 8s ease;
 }
 
-.hero:hover .hero-img-wrapper img {
-  transform: scale(1.03);
-}
+.hero:hover .hero-img-wrapper img { transform: scale(1.03); }
 
-/* Subtle vignette for depth, not heavy fade */
 .hero-img-wrapper::after {
   content: '';
   position: absolute;
@@ -484,7 +468,6 @@ section { padding: 60px 40px; }
 
 .slider::-webkit-scrollbar { display: none; }
 
-/* Nav Buttons */
 .slider-container .prev,
 .slider-container .next {
   position: absolute;
@@ -620,247 +603,4 @@ section { padding: 60px 40px; }
   flex-direction: column;
 }
 
-.top-destinations .card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--mist-blue);
-}
-
-.top-destinations .card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  transition: transform 0.5s ease;
-}
-
-.top-destinations .card:hover img { transform: scale(1.06); }
-
-.top-destinations .card h3 {
-  margin: 16px 16px 5px;
-  font-size: 1.15rem;
-  color: var(--rust-warm);
-}
-
-.top-destinations .card p {
-  padding: 0 16px 18px;
-  margin: 0;
-  color: var(--slate-warm);
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-/* =========================================
-   INFO SECTION
-   ========================================= */
-.info-section {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  padding: 80px 40px;
-  background: linear-gradient(180deg, var(--cream) 0%, var(--sky-pale) 100%);
-  flex-wrap: wrap;
-}
-
-.info {
-  max-width: 480px;
-  padding: 35px;
-  background: var(--snow);
-  border-radius: var(--radius);
-  border: 1px solid var(--sky-soft);
-  transition: var(--transition);
-  box-shadow: var(--shadow);
-}
-
-.info:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-hover);
-  border-color: var(--mist-blue);
-}
-
-.info h2 {
-  text-align: left;
-  font-size: 1.5rem;
-  margin-bottom: 14px;
-  color: var(--ink-mid);
-}
-
-.info h2::after {
-  left: 0;
-  transform: none;
-  width: 45px;
-  height: 2px;
-  background: linear-gradient(90deg, var(--rust-mid), var(--lake-soft));
-}
-
-.info p {
-  color: var(--slate-warm);
-  margin-bottom: 12px;
-  line-height: 1.7;
-}
-
-/* =========================================
-   FOOTER
-   ========================================= */
-/* =========================================
-   FOOTER — MODERN & CLEAN
-   ========================================= */
-footer {
-  background: var(--ink-soft);
-  padding: 60px 40px 25px;
-  text-align: center;
-}
-
-footer .quote {
-  font-family: var(--font-display);
-  font-size: 1.7rem;
-  font-style: italic;
-  color: var(--rust-soft);
-  margin-bottom: 40px;
-  position: relative;
-  display: inline-block;
-  line-height: 1.4;
-}
-
-footer .quote::before,
-footer .quote::after {
-  content: '"';
-  font-size: 2.2rem;
-  color: var(--rust-mid);
-  opacity: 0.5;
-  position: absolute;
-}
-
-footer .quote::before {
-  left: -22px;
-  top: -8px;
-}
-
-footer .quote::after {
-  content: '"';
-  right: -22px;
-  bottom: -12px;
-}
-
-/* Social Section */
-.footer-social {
-  margin-bottom: 35px;
-}
-
-.follow-label {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: var(--frost-light);
-  margin-bottom: 16px;
-  opacity: 0.8;
-}
-
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-}
-
-.social-icons a {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  background: rgba(158, 180, 200, 0.1);
-  border: 1px solid rgba(158, 180, 200, 0.2);
-  color: var(--frost-light);
-  transition: var(--transition);
-}
-
-.social-icons a:hover {
-  background: var(--rust-mid);
-  border-color: var(--rust-light);
-  color: var(--snow);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(168, 92, 58, 0.25);
-}
-
-.social-icons a svg {
-  width: 20px;
-  height: 20px;
-}
-
-/* Contact Section */
-.footer-contact {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 40px;
-  margin-bottom: 35px;
-}
-
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--mist-blue);
-  font-size: 0.95rem;
-  transition: var(--transition);
-}
-
-.contact-item:hover {
-  color: var(--snow);
-}
-
-.contact-icon {
-  width: 18px;
-  height: 18px;
-  color: var(--frost-light);
-  transition: var(--transition);
-}
-
-.contact-item:hover .contact-icon {
-  color: var(--rust-light);
-}
-
-/* Bottom */
-.footer-bottom {
-  border-top: 1px solid rgba(158, 180, 200, 0.15);
-  padding-top: 20px;
-}
-
-.footer-bottom p {
-  color: var(--frost-light);
-  font-size: 0.8rem;
-  letter-spacing: 0.5px;
-  opacity: 0.7;
-}
-
-/* =========================================
-   RESPONSIVE
-   ========================================= */
-@media (max-width: 768px) {
-  footer {
-    padding: 45px 24px 20px;
-  }
-
-  footer .quote {
-    font-size: 1.3rem;
-    margin-bottom: 30px;
-  }
-
-  .footer-contact {
-    flex-direction: column;
-    gap: 18px;
-    align-items: center;
-  }
-
-  .social-icons a {
-    width: 40px;
-    height: 40px;
-  }
-
-  .social-icons a svg {
-    width: 18px;
-    height: 18px;
-  }
-}
+.top-destinations .card
